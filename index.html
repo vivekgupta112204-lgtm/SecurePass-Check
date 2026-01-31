@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecurePass Check | Advanced Password Strength Meter & Security Tool</title>
-    <meta name="description" content="Analyze your password strength instantly with our client-side, privacy-first tool. Learn cybersecurity best practices and estimate time-to-crack for better online safety.">
-    <meta name="keywords" content="password strength checker, password security test, time to crack password, cybersecurity tool, student password safety, strong password generator guide">
+    <meta name="description" content="Free online password strength checker. Analyze password complexity, estimate crack time, and learn cybersecurity best practices. Privacy-first, client-side tool.">
+    <meta name="keywords" content="password strength checker, password security test, time to crack password, cybersecurity tool, student password safety, strong password generator guide, brute force calculator">
+    <meta name="google-site-verification" content="dETnnFGLubx2aktOK86q6xdicEYlBtF08KTziW5P_rE" />
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2014274337287264" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -32,7 +37,7 @@
             <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
                 <a href="index.html" class="text-blue-600">Tool</a>
                 <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
-                <a href="blog-strong-password.html" class="hover:text-blue-600 transition-colors">Blog</a>
+                <a href="#blog" class="hover:text-blue-600 transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
             </div>
         </div>
@@ -42,7 +47,7 @@
         
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">Password Strength & <br><span class="text-blue-600">Time to Crack</span> Calculator</h1>
-            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Test your password's resilience against brute-force attacks instantly. 100% private, client-side analysis.</p>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Analyze your password security instantly. 100% private, client-side encryption testing.</p>
         </header>
 
         <!-- Tool Section -->
@@ -97,72 +102,136 @@
         <!-- Ad Slot -->
         <div class="ad-container">
             <span class="ad-label">Advertisement</span>
-            <div class="ad-placeholder h-32">Google AdSense</div>
+            <div class="ad-placeholder h-32">
+                <!-- AdSense Auto Ads will inject here or users can place manual units -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2014274337287264"
+                     data-ad-slot="auto"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
         </div>
 
         <!-- Main Content Area -->
         <div class="grid lg:grid-cols-3 gap-12 mt-16">
             
-            <!-- Left Column: Articles -->
+            <!-- Left Column: Articles & SEO Content -->
             <div class="lg:col-span-2 space-y-12">
+                
+                <!-- Expanded SEO Home Page Content -->
                 <article class="prose prose-slate max-w-none">
-                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding Password Security in 2026</h2>
-                    <p>In the evolving landscape of cybersecurity, the definition of a "strong password" has changed. With the advent of powerful GPUs and AI-driven cracking tools, what was considered secure five years ago may now be vulnerable in seconds. SecurePass Check aims to bridge the gap between technical complexity and user awareness.</p>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">The Definitive Guide to Password Security (2026 Edition)</h2>
                     
-                    <h3>How SecurePass Check Works</h3>
-                    <p>Our tool utilizes a mathematical entropy calculation model. Instead of simply checking for "one uppercase letter," we analyze the total pool of characters used and the length of the string to determine the number of possible combinations. We then divide this by an estimated attack rate (currently benchmarked at 1 billion guesses per second for high-end consumer hardware) to derive the "Time to Crack."</p>
+                    <p>Welcome to <strong>SecurePass Check</strong>, the web's most privacy-centric password strength analysis tool. In a digital world where data breaches are becoming daily news, securing your digital identity is no longer optional—it is a necessity.</p>
+                    
+                    <h3>Why Do You Need a Password Checker?</h3>
+                    <p>Most users drastically overestimate the strength of their passwords. You might think replacing "E" with "3" (e.g., "P3terPan") makes you clever, but modern cracking algorithms anticipate these common substitutions instantly. SecurePass Check helps you visualize exactly how vulnerable these patterns are by calculating the mathematical entropy of your password string.</p>
 
-                    <h3>Why Students and Seniors are Targets</h3>
-                    <p>Cybercriminals often target demographics that may reuse passwords across multiple platforms. Students often use the same login for social media as they do for university portals. Seniors may use simple names or dates. SecurePass Check is designed to visually demonstrate the risk of these habits without technical jargon.</p>
+                    <h3>How the "Time to Crack" is Calculated</h3>
+                    <p>Our tool uses a standard cybersecurity formula based on <strong>Information Entropy</strong> and <strong>Brute Force Velocity</strong>.</p>
+                    <ul>
+                        <li><strong>Pool Size:</strong> We analyze if you used lowercase (26), uppercase (26), numbers (10), and symbols (33). The larger the pool, the harder it is to guess.</li>
+                        <li><strong>Length:</strong> This is the exponential multiplier. A 12-character password is exponentially harder to crack than an 8-character one.</li>
+                        <li><strong>Attack Speed:</strong> We assume a modern hacker using a high-end consumer GPU cluster can attempt approximately <strong>1 billion guesses per second</strong>.</li>
+                    </ul>
+
+                    <h3>The Science of Entropy</h3>
+                    <p>Entropy is measured in "bits." It represents the total number of guesses required to crack a password. For example, a password with 10 bits of entropy takes only $2^{10}$ (1,024) guesses. A password with 60 bits takes $2^{60}$ guesses, which is roughly 1.15 quintillion.</p>
+                    <p>When you add a symbol to your password, you aren't just adding one character; you are expanding the character set (N) used in the formula $E = L \times \log_2(N)$. This is why a short password with symbols is often weaker than a long password made of simple words.</p>
+
+                    <h3>History of Password Security</h3>
+                    <p>In the early days of computing, passwords were often limited to 8 characters due to storage constraints. The famous UNIX encryption system only considered the first 8 characters of a password. Today, modern hashing algorithms like Argon2 and bcrypt allow for much longer passwords (often up to 128 characters or more).</p>
+                    <p>However, legacy habits remain. Many users still choose 8-character passwords because that was the standard for decades. SecurePass Check aims to break these habits by visually demonstrating how quickly 8 characters can be broken by modern hardware (often in minutes).</p>
+
+                    <h3>Who Is This Tool For?</h3>
+                    <div class="grid md:grid-cols-2 gap-4 my-6 not-prose">
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                            <h4 class="font-bold text-blue-800 mb-1">Students</h4>
+                            <p class="text-sm text-blue-700">Protect your university portals, social media, and research data from credential stuffing.</p>
+                        </div>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <h4 class="font-bold text-emerald-800 mb-1">Small Business Owners</h4>
+                            <p class="text-sm text-emerald-700">Ensure your employees aren't using "Company123" as their login, risking your entire client database.</p>
+                        </div>
+                    </div>
+
+                    <h3>Benefits of SecurePass Check</h3>
+                    <ul>
+                        <li><strong>Zero Data Leaks:</strong> Unlike other tools, we do not have a backend server. Your password is processed by your own browser's JavaScript engine.</li>
+                        <li><strong>Instant Feedback:</strong> See in real-time how adding a single symbol changes the crack time from "2 days" to "300 years".</li>
+                        <li><strong>Educational:</strong> We don't just say "Weak"; we explain <em>why</em> and give actionable tips.</li>
+                    </ul>
                 </article>
 
-                <!-- Latest Guides Section -->
-                <div class="border-t border-slate-200 pt-12">
-                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Latest Security Guides</h2>
-                    <div class="grid gap-8">
+                <!-- Blog Hub Section -->
+                <div id="blog" class="border-t border-slate-200 pt-12">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Cybersecurity Academy: Latest Articles</h2>
+                    <div class="grid gap-6">
                         
-                        <div class="group">
-                            <a href="blog-strong-password.html" class="block">
-                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">How to Create a Strong Password in 2026</h3>
-                                <p class="text-slate-600 mb-3">A comprehensive guide on creating memorable yet unbreakable passwords using the passphrase method.</p>
-                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                        <!-- Row 1 -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <a href="blog-strong-password.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">How to Create a Strong Password in 2026</h3>
+                                <p class="text-sm text-slate-500">The ultimate guide to creating unbreakable credentials using modern entropy rules.</p>
+                            </a>
+                            <a href="blog-common-mistakes.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">5 Common Password Mistakes</h3>
+                                <p class="text-sm text-slate-500">Are you guilty of these? Learn what habits put your accounts at risk.</p>
                             </a>
                         </div>
 
-                        <div class="group">
-                            <a href="blog-common-mistakes.html" class="block">
-                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">5 Common Password Mistakes That Lead to Hacks</h3>
-                                <p class="text-slate-600 mb-3">Are you using pet names? Sequential numbers? Learn what habits put your digital identity at risk.</p>
-                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                        <!-- Row 2 -->
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <a href="blog-how-hackers-crack.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">How Hackers Crack Passwords</h3>
+                                <p class="text-sm text-slate-500">A deep dive into Brute Force, Dictionary Attacks, and Rainbow Tables.</p>
+                            </a>
+                            <a href="blog-management-tips.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">Password Management Tips</h3>
+                                <p class="text-sm text-slate-500">Why you need a password manager and how to set up 2FA correctly.</p>
                             </a>
                         </div>
 
-                        <div class="group">
-                            <a href="blog-are-checkers-safe.html" class="block">
-                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">Are Online Password Checkers Safe?</h3>
-                                <p class="text-slate-600 mb-3">The truth about client-side vs. server-side checking and how to verify if a tool is stealing your data.</p>
-                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                         <!-- Row 3 -->
+                         <div class="grid md:grid-cols-2 gap-6">
+                            <a href="blog-are-checkers-safe.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">Are Online Checkers Safe?</h3>
+                                <p class="text-sm text-slate-500">How to distinguish between safe client-side tools and phishing traps.</p>
+                            </a>
+                            <a href="blog-passphrases.html" class="block bg-white p-6 rounded-xl border border-slate-200 hover:border-blue-500 transition-colors shadow-sm">
+                                <h3 class="font-bold text-lg text-slate-900 mb-2">Passwords vs. Passphrases</h3>
+                                <p class="text-sm text-slate-500">Why length beats complexity and how to remember 20-character codes.</p>
                             </a>
                         </div>
 
                     </div>
                 </div>
 
-                <!-- FAQ -->
+                <!-- FAQ Section -->
                 <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
                     <h2 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
                     <div class="space-y-6">
                         <div>
-                            <h4 class="font-bold text-slate-800">Is this tool safe to use?</h4>
-                            <p class="text-sm text-slate-600 mt-1">Yes. SecurePass Check uses JavaScript to process your input directly in your browser. No data is sent to the cloud.</p>
+                            <h4 class="font-bold text-slate-800">1. Is my password sent to your database?</h4>
+                            <p class="text-sm text-slate-600 mt-1">Absolutely not. SecurePass Check operates entirely within your browser. No data leaves your device.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800">What makes a password strong?</h4>
-                            <p class="text-sm text-slate-600 mt-1">Length is the most critical factor. A 15-character password made of random lowercase letters is often stronger than an 8-character password with complex symbols.</p>
+                            <h4 class="font-bold text-slate-800">2. How long should a secure password be?</h4>
+                            <p class="text-sm text-slate-600 mt-1">In 2026, we recommend a minimum of 12 characters. Ideally, aim for 16+ characters to defeat modern GPU cracking rigs.</p>
                         </div>
                         <div>
-                            <h4 class="font-bold text-slate-800">Does this guarantee I won't be hacked?</h4>
-                            <p class="text-sm text-slate-600 mt-1">No tool can guarantee absolute safety. This tool estimates resistance to brute-force attacks, but it cannot protect against phishing or keyloggers.</p>
+                            <h4 class="font-bold text-slate-800">3. Is it safe to use a password manager?</h4>
+                            <p class="text-sm text-slate-600 mt-1">Yes, it is safer than memorizing passwords. Good managers (like Bitwarden or 1Password) use zero-knowledge encryption.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">4. Can I use this tool offline?</h4>
+                            <p class="text-sm text-slate-600 mt-1">Yes! Once the page loads, you can disconnect your internet and the tool will still function perfectly. This is the best way to verify our privacy promise.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">5. What is the difference between a weak and strong password?</h4>
+                            <p class="text-sm text-slate-600 mt-1">A weak password relies on common words or patterns (e.g., "password123"). A strong password uses high entropy, meaning it is random and unpredictable (e.g., "Correct-Horse-Battery-Staple").</p>
                         </div>
                     </div>
                 </div>
@@ -171,19 +240,29 @@
             <!-- Right Column: Sidebar -->
             <aside class="space-y-8">
                 <div class="bg-blue-600 rounded-2xl p-6 text-white shadow-lg">
-                    <h3 class="font-bold text-lg mb-2">Privacy First</h3>
+                    <h3 class="font-bold text-lg mb-2">Privacy Assurance</h3>
                     <p class="text-blue-100 text-sm mb-4">We believe in privacy by design. Inspect our source code or use this tool offline.</p>
                     <a href="privacy-policy.html" class="inline-block bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition-colors">Read Policy</a>
                 </div>
 
                 <div class="ad-container">
                     <span class="ad-label">Sponsored</span>
-                    <div class="ad-placeholder h-64">Square Ad</div>
+                    <div class="ad-placeholder h-64">
+                         <!-- Sidebar Square Ad -->
+                         <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-2014274337287264"
+                         data-ad-slot="auto"
+                         data-ad-format="rectangle"
+                         data-full-width-responsive="true"></ins>
+                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    </div>
                 </div>
 
                 <div class="bg-white rounded-2xl border border-slate-200 p-6">
                     <h3 class="font-bold text-slate-900 mb-4">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="about.html" class="hover:text-blue-600">About Us</a></li>
                         <li><a href="terms.html" class="hover:text-blue-600">Terms & Conditions</a></li>
                         <li><a href="disclaimer.html" class="hover:text-blue-600">Disclaimer</a></li>
                         <li><a href="contact.html" class="hover:text-blue-600">Contact Support</a></li>
@@ -224,7 +303,7 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-        // Logic from previous version preserved below
+        
         const passwordInput = document.getElementById('passwordInput');
         const toggleBtn = document.getElementById('toggleBtn');
         const eyeIcon = document.getElementById('eyeIcon');

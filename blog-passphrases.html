@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference Between Passwords and Passphrases | SecurePass Check</title>
+    <meta name="description" content="Why 'Correct-Horse-Battery-Staple' is stronger than 'Tr0ub4dor&3'. Learn the science of passphrases and why length wins.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2014274337287264" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
+            <div class="flex gap-4 text-sm font-medium">
+                <a href="index.html" class="text-blue-600 hover:text-blue-700">Tool</a>
+                <a href="index.html#blog" class="text-slate-600 hover:text-blue-600">Back to Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow">
+        <article class="prose prose-slate prose-lg max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Difference Between Passwords and Passphrases: Why Longer is Better</h1>
+            <div class="text-sm text-slate-500 mb-8 flex gap-4">
+                <span>By SecurePass Team</span>
+                <span>&bull;</span>
+                <span>5 min read</span>
+            </div>
+
+            <p class="lead">The traditional password advice was to create complex gibberish. The modern advice is to create a "Passphrase"—a sentence or collection of words. Why the shift?</p>
+
+            <h2>The Problem with Complexity</h2>
+            <p>Humans are bad at randomness. When asked to create a complex password, we make predictable choices:</p>
+            <ul>
+                <li>Capitalizing the first letter.</li>
+                <li>Adding a "1" or "!" at the end.</li>
+                <li>Replacing "a" with "@".</li>
+            </ul>
+            <p>A computer can guess these patterns very quickly. Furthermore, strings like <code>J8#kL2!m</code> are impossible to remember, forcing users to write them down (unsafe) or reset them constantly (annoying).</p>
+
+            <h2>Enter the Passphrase</h2>
+            <p>A passphrase is a sequence of random words. For example:</p>
+            <blockquote>purple-bicycle-eating-pizza</blockquote>
+            <p><strong>Why is this stronger?</strong></p>
+            <ol>
+                <li><strong>Length:</strong> This phrase is 27 characters long. The math of entropy heavily favors length. Even without numbers or symbols, a 27-character string is virtually unbreakable by brute force.</li>
+                <li><strong>Memorability:</strong> It is easy for a human brain to visualize a purple bicycle eating pizza. It is hard to visualize <code>J8#kL2!m</code>.</li>
+                <li><strong>Typing Speed:</strong> It is much faster to type words you know than to hunt for special symbols on your keyboard.</li>
+            </ol>
+
+            <h2>How to Build a Good Passphrase</h2>
+            <p><strong>Do:</strong></p>
+            <ul>
+                <li>Use 4 or more random, unrelated words.</li>
+                <li>Separate them with spaces or dashes.</li>
+                <li>Add one capital letter or number if the website requires it (e.g., <code>Purple-bicycle-eating-pizza1</code>).</li>
+            </ul>
+            <p><strong>Don't:</strong></p>
+            <ul>
+                <li>Use common sayings or lyrics (e.g., "To be or not to be"). Hackers have lists of these.</li>
+                <li>Use names of family members or pets.</li>
+            </ul>
+
+            <h3>The XKCD Method</h3>
+            <p>This concept was famously illustrated by the webcomic XKCD, which showed that <code>correcthorsebatterystaple</code> took 550 years to crack, while <code>Tr0ub4dor&3</code> took 3 days. The logic holds up: mathematical difficulty for computers, ease of memory for humans.</p>
+
+        </article>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

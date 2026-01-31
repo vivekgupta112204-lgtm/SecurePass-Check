@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Hackers Crack Passwords | SecurePass Check</title>
+    <meta name="description" content="Understand the mechanics of Brute Force, Rainbow Tables, and Dictionary Attacks. Learn how hackers operate so you can defend yourself.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2014274337287264" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
+            <div class="flex gap-4 text-sm font-medium">
+                <a href="index.html" class="text-blue-600 hover:text-blue-700">Tool</a>
+                <a href="index.html#blog" class="text-slate-600 hover:text-blue-600">Back to Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow">
+        <article class="prose prose-slate prose-lg max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Password Strength Explained: How Hackers Crack Weak Passwords</h1>
+            <div class="text-sm text-slate-500 mb-8 flex gap-4">
+                <span>By SecurePass Team</span>
+                <span>&bull;</span>
+                <span>9 min read</span>
+            </div>
+
+            <p class="lead">To defeat your enemy, you must understand them. Hackers do not sit at a keyboard guessing "God" or "Love" manually. They use sophisticated automated tools. Here is a breakdown of the three most common attack methods.</p>
+
+            <h2>1. Dictionary Attacks</h2>
+            <p>This is the fastest and most common method. The hacker feeds a list of words (a "dictionary") into a program. This isn't just the Oxford English Dictionary; it includes common passwords like "password", "qwerty", "yankees", and "superman".</p>
+            <p><strong>The Defense:</strong> Never use a standalone English word. "Dragon" is cracked in 0.0001 seconds. "Dr@g0n" is cracked in 0.5 seconds because the dictionary software also checks for common letter substitutions (Leet Speak).</p>
+
+            <h2>2. Brute Force Attacks</h2>
+            <p>If the dictionary attack fails, the software moves to Brute Force. This is checking every possible combination of characters: <code>aaaa</code>, <code>aaab</code>, <code>aaac</code>... until it finds the match.</p>
+            <p><strong>The Math:</strong> A 7-character password has about 3 trillion combinations. A modern GPU cluster can check billions of passwords per second. This means short passwords fall in minutes. However, a 12-character password has quadrillions of combinations, taking centuries to crack.</p>
+            <p><strong>The Defense:</strong> Length. Length. Length. Every character you add increases the difficulty exponentially.</p>
+
+            <h2>3. Rainbow Tables</h2>
+            <p>When websites store your password, they (hopefully) store it as a "Hash"—a scrambled string of text. A Rainbow Table is a pre-computed list of millions of passwords and their corresponding hash values. Hackers can simply look up the hash of your password in this giant table to find the original text instantly.</p>
+            <p><strong>The Defense:</strong> This is mostly up to the website developer (who should use "Salted" hashes), but using a unique, long password ensures it won't be in the hacker's pre-computed table.</p>
+
+            <h2>4. Social Engineering & Phishing</h2>
+            <p>Sometimes, the easiest way to break a password is to ask for it. Phishing emails that look like they come from "Google Support" or "Netflix Billing" trick you into typing your password into a fake website.</p>
+            <p><strong>The Defense:</strong> Always check the URL bar. Enable Two-Factor Authentication (2FA) so that even if they get your password, they cannot login.</p>
+
+            <h3>Summary</h3>
+            <p>Hackers are lazy; they look for low-hanging fruit. By ensuring your password is long (12+ characters), unique (not reused), and random (high entropy), you make yourself too difficult a target to bother with.</p>
+
+        </article>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
