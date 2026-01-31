@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | SecurePass Check</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
+            <a href="index.html" class="text-sm text-blue-600 font-medium">Back to Tool</a>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow prose prose-slate">
+        <h1>Disclaimer</h1>
+        
+        <h2>Not Professional Security Advice</h2>
+        <p>The information provided by SecurePass Check is for general informational and educational purposes only. All information on the Site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.</p>
+
+        <h2>No Guarantee of Safety</h2>
+        <p>A "Strong" rating on this website does not guarantee that your password cannot be hacked. Hacking methods vary widely and often involve social engineering, phishing, or keylogging, which are unrelated to password complexity. We strongly recommend enabling Two-Factor Authentication (2FA) on all your accounts for better security.</p>
+
+        <h2>External Links</h2>
+        <p>The Site may contain links to other websites or content belonging to or originating from third parties. Such external links are not investigated, monitored, or checked for accuracy by us.</p>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

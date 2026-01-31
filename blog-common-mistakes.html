@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Common Password Mistakes | SecurePass Check</title>
+    <meta name="description" content="Are you using your pet's name? Repeating passwords? Discover the top 5 mistakes that make you an easy target for hackers.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
+            <div class="flex gap-4 text-sm font-medium">
+                <a href="index.html" class="text-blue-600 hover:text-blue-700">Tool</a>
+                <a href="index.html#blog" class="text-slate-600 hover:text-blue-600">Back to Guides</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow">
+        <article class="prose prose-slate prose-lg max-w-none bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-4">5 Common Password Mistakes That Lead to Hacks</h1>
+            <div class="text-sm text-slate-500 mb-8 flex gap-4">
+                <span>By SecurePass Team</span>
+                <span>&bull;</span>
+                <span>8 min read</span>
+            </div>
+
+            <p class="lead">Hackers don't usually "hack" passwords in the way you see in movies (typing furiously at a green screen). They exploit human laziness and predictability. Here are the top 5 mistakes that open the door to them.</p>
+
+            <h2>1. Password Reuse (The Cardinal Sin)</h2>
+            <p>This is the #1 cause of major breaches. You use the same password for your Netflix account as you do for your bank.</p>
+            <p><strong>The Scenario:</strong> A low-security forum you joined 5 years ago gets hacked. Your email and password are leaked to the Dark Web. Hackers then use "Credential Stuffing" bots to try that email/password combination on Amazon, PayPal, Gmail, and thousands of other sites. If you reused the password, they are in.</p>
+
+            <h2>2. Using Personal Information</h2>
+            <p>Social Engineering is the art of manipulating people into giving up confidential info. But often, you give it up voluntarily on social media.</p>
+            <ul>
+                <li>Your dog's name? It's on your Instagram.</li>
+                <li>Your birth year? It's on Facebook.</li>
+                <li>Your favorite team? It's in your Twitter bio.</li>
+            </ul>
+            <p>Hackers use "wordlists" tailored to you. If your password is <code>Rover1995</code>, it will be guessed in seconds.</p>
+
+            <h2>3. Pattern usage (Keyboard Walks)</h2>
+            <p>Passwords like <code>qwerty</code>, <code>123456</code>, or <code>qazwsx</code> (walking down the left side of the keyboard) are the first strings checked by brute-force software.</p>
+
+            <h2>4. Thinking "Substitutions" Are Clever</h2>
+            <p>Replacing 'a' with '@' or 'i' with '1' is called "Leet Speak." It was clever in 1990. Today, every cracking rule-set accounts for these substitutions automatically. <code>P@$$w0rd</code> is statistically just as weak as <code>password</code> to a computer.</p>
+
+            <h2>5. Ignoring Two-Factor Authentication (2FA)</h2>
+            <p>Even the strongest password can be phished. 2FA acts as a safety net. If you don't have 2FA enabled, your password is your single point of failure. Always enable SMS or App-based (Google Authenticator) 2FA.</p>
+
+        </article>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

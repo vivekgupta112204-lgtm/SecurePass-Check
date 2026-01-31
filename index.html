@@ -3,56 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Strength Checker | Time to Crack Password Calculator</title>
-    <meta name="description" content="Check how strong your password is and estimate the time to crack it. A free, privacy-first password safety tool that runs 100% in your browser.">
-    <meta name="keywords" content="password strength checker, time to crack password, password safety checker, how strong is my password, brute force calculator, cybersecurity tool">
-    
-    <!-- Tailwind CSS for styling -->
+    <title>SecurePass Check | Advanced Password Strength Meter & Security Tool</title>
+    <meta name="description" content="Analyze your password strength instantly with our client-side, privacy-first tool. Learn cybersecurity best practices and estimate time-to-crack for better online safety.">
+    <meta name="keywords" content="password strength checker, password security test, time to crack password, cybersecurity tool, student password safety, strong password generator guide">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        
-        /* Smooth transitions for the meter */
         .meter-fill { transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s ease; }
-        
-        /* AdSense Safe Zone Containers */
-        .ad-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 2rem 0;
-            padding: 1rem;
-            background-color: #f8fafc; /* slate-50 */
-            border: 1px dashed #cbd5e1; /* slate-300 */
-            border-radius: 0.5rem;
-        }
-        
-        .ad-label {
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: #64748b;
-            margin-bottom: 0.5rem;
-        }
-        
-        .ad-placeholder {
-            width: 100%;
-            height: 90px;
-            background-color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 0.875rem;
-            border-radius: 0.25rem;
-        }
-
-        /* Utility */
+        .ad-container { width: 100%; display: flex; flex-direction: column; align-items: center; margin: 2rem 0; padding: 1rem; background-color: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 0.5rem; }
+        .ad-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: #64748b; margin-bottom: 0.5rem; }
+        .ad-placeholder { width: 100%; height: 90px; background-color: #fff; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.875rem; border-radius: 0.25rem; }
         .fade-in { animation: fadeIn 0.4s ease-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -61,7 +22,7 @@
 
     <!-- Navigation -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-slate-900 group">
                 <div class="bg-blue-600 p-1.5 rounded-lg group-hover:bg-blue-700 transition-colors">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
@@ -69,203 +30,201 @@
                 <span>SecurePass Check</span>
             </a>
             <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="index.html" class="text-blue-600">Tool</a>
                 <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
-                <a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy</a>
+                <a href="blog-strong-password.html" class="hover:text-blue-600 transition-colors">Blog</a>
                 <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
+    <div class="flex-grow max-w-5xl mx-auto px-4 py-8 w-full">
         
-        <!-- H1 Header -->
-        <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">Password Strength & <br class="md:hidden">Time to Crack Checker</h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Check how strong your password is — and how long it would take a hacker to crack it using brute force.</p>
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 mb-6 leading-tight">Password Strength & <br><span class="text-blue-600">Time to Crack</span> Calculator</h1>
+            <p class="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto">Test your password's resilience against brute-force attacks instantly. 100% private, client-side analysis.</p>
         </header>
 
-        <!-- ✅ AD SLOT 1: Top Banner -->
-        <div class="ad-container">
-            <span class="ad-label">Sponsored</span>
-            <div class="ad-placeholder">
-                <!-- Replace with Google AdSense Code -->
-                Google AdSense - Top Banner
-            </div>
-        </div>
-
-        <!-- 🔐 PASSWORD TOOL (No Ads Here) -->
-        <section class="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 p-6 md:p-10 mb-10">
+        <!-- Tool Section -->
+        <section class="bg-white rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 p-6 md:p-12 mb-16 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500"></div>
             
-            <!-- Input Area -->
             <div class="mb-8">
-                <label for="passwordInput" class="block text-sm font-bold text-slate-500 mb-2 uppercase tracking-wider">Enter Password to Check</label>
+                <label for="passwordInput" class="block text-sm font-bold text-slate-500 mb-2 uppercase tracking-wider">Test a Password (Local Check Only)</label>
                 <div class="relative group">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <svg class="w-6 h-6 text-slate-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                    </div>
-                    <input type="password" id="passwordInput" class="w-full pl-12 pr-14 py-4 text-xl md:text-2xl font-medium text-slate-800 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-300" placeholder="Type here..." autocomplete="off" spellcheck="false">
-                    <button id="toggleBtn" class="absolute inset-y-0 right-0 px-4 text-slate-400 hover:text-slate-600 transition-colors" aria-label="Toggle Password Visibility">
-                        <!-- Eye Icon -->
+                    <input type="password" id="passwordInput" class="w-full pl-6 pr-14 py-5 text-xl md:text-3xl font-bold text-slate-800 bg-slate-50 border-2 border-slate-200 rounded-2xl focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-300 placeholder:font-normal" placeholder="Enter a password..." autocomplete="off" spellcheck="false">
+                    <button id="toggleBtn" class="absolute inset-y-0 right-0 px-6 text-slate-400 hover:text-slate-600 transition-colors">
                         <svg id="eyeIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                        <!-- Eye Off Icon -->
                         <svg id="eyeOffIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path></svg>
                     </button>
                 </div>
             </div>
 
-            <button id="checkBtn" class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 px-6 rounded-xl transition-colors mb-8 text-lg shadow-lg shadow-blue-200">
-                Check Password
+            <button id="checkBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all hover:shadow-lg hover:shadow-blue-500/30 mb-8 text-lg">
+                Analyze Security
             </button>
 
-            <!-- Results Section -->
-            <div id="results" class="hidden">
-                <!-- Strength Meter -->
+            <div id="results" class="hidden animate-fadeIn">
                 <div class="mb-8">
                     <div class="flex justify-between items-end mb-3">
-                        <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">Strength</span>
-                        <span id="strengthText" class="text-2xl font-bold text-slate-800">Very Weak</span>
+                        <span class="text-sm font-bold text-slate-500 uppercase">Complexity Score</span>
+                        <span id="strengthText" class="text-2xl font-bold text-slate-800">Calculating...</span>
                     </div>
                     <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden">
-                        <div id="strengthBar" class="h-full bg-red-500 w-0 meter-fill"></div>
+                        <div id="strengthBar" class="h-full bg-slate-300 w-0 meter-fill"></div>
                     </div>
                 </div>
 
-                <!-- Time to Crack -->
-                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 flex flex-col md:flex-row items-center md:items-start gap-5 text-center md:text-left">
-                    <div class="p-3 bg-white rounded-xl shadow-sm text-blue-600 shrink-0">
-                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-2xl p-8 mb-8 flex flex-col md:flex-row items-center gap-6">
+                    <div class="p-4 bg-blue-50 rounded-full text-blue-600">
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimated Time to Crack</h4>
-                        <p id="crackTime" class="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">0 seconds</p>
-                        <p class="text-xs text-slate-500 mt-2">Based on a brute-force attack rate of 1 billion guesses/second.</p>
+                    <div class="text-center md:text-left">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Time to Crack (Brute Force)</h4>
+                        <p id="crackTime" class="text-4xl font-black text-slate-800">0 seconds</p>
                     </div>
                 </div>
 
-                <!-- Tips -->
-                <div id="tipsArea" class="space-y-3">
-                    <!-- Dynamic tips will appear here -->
-                </div>
+                <div id="tipsArea" class="grid gap-3"></div>
             </div>
 
-            <!-- Privacy Notice (Trust Signal) -->
-            <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center">
-                <p class="privacy-note text-sm text-slate-500 flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                    Your password never leaves your device. All checks are local.
-                </p>
-            </div>
-
+            <p class="mt-6 text-center text-xs text-slate-400 flex justify-center items-center gap-2">
+                <svg class="w-3 h-3 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                SecurePass Check runs locally. No data is sent to servers.
+            </p>
         </section>
 
-        <!-- ✅ AD SLOT 2: After Tool -->
+        <!-- Ad Slot -->
         <div class="ad-container">
-            <span class="ad-label">Sponsored</span>
-            <div class="ad-placeholder h-32">
-                <!-- Replace with Google AdSense Code -->
-                Google AdSense - Responsive Display
-            </div>
+            <span class="ad-label">Advertisement</span>
+            <div class="ad-placeholder h-32">Google AdSense</div>
         </div>
 
-        <!-- SEO Content Sections -->
-        <article class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600">
+        <!-- Main Content Area -->
+        <div class="grid lg:grid-cols-3 gap-12 mt-16">
             
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Why Password Security Matters</h2>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="mb-4">
-                        In today's digital age, your password is the key to your digital identity. Weak passwords are the number one cause of data breaches. If a hacker cracks your password, they can gain access to your emails, bank accounts, social media profiles, and personal photos.
-                    </p>
-                    <p>
-                        <strong>SecurePass Check</strong> helps you visualize how vulnerable a weak password is. By understanding the "Time to Crack," you can make informed decisions to create stronger, more complex passwords that keep your data safe.
-                    </p>
-                </div>
-            </section>
+            <!-- Left Column: Articles -->
+            <div class="lg:col-span-2 space-y-12">
+                <article class="prose prose-slate max-w-none">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">Understanding Password Security in 2026</h2>
+                    <p>In the evolving landscape of cybersecurity, the definition of a "strong password" has changed. With the advent of powerful GPUs and AI-driven cracking tools, what was considered secure five years ago may now be vulnerable in seconds. SecurePass Check aims to bridge the gap between technical complexity and user awareness.</p>
+                    
+                    <h3>How SecurePass Check Works</h3>
+                    <p>Our tool utilizes a mathematical entropy calculation model. Instead of simply checking for "one uppercase letter," we analyze the total pool of characters used and the length of the string to determine the number of possible combinations. We then divide this by an estimated attack rate (currently benchmarked at 1 billion guesses per second for high-end consumer hardware) to derive the "Time to Crack."</p>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">What Is “Time to Crack”?</h2>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="mb-4">
-                        "Time to crack" is a mathematical estimate of how long a computer would take to guess your password by trying every possible combination of characters. This is known as a <em>brute-force attack</em>.
-                    </p>
-                    <h3 class="text-lg font-bold mt-6 mb-2">How we calculate it:</h3>
-                    <ul class="list-disc pl-5 space-y-2">
-                        <li><strong>Character Set:</strong> We check if you use lowercase letters, uppercase letters, numbers, and symbols.</li>
-                        <li><strong>Combinations:</strong> The math is simple: <code>Pool Size ^ Password Length</code>.</li>
-                        <li><strong>Attack Speed:</strong> We assume a modern powerful computer can try <strong>1,000,000,000 (1 billion)</strong> passwords per second.</li>
+                    <h3>Why Students and Seniors are Targets</h3>
+                    <p>Cybercriminals often target demographics that may reuse passwords across multiple platforms. Students often use the same login for social media as they do for university portals. Seniors may use simple names or dates. SecurePass Check is designed to visually demonstrate the risk of these habits without technical jargon.</p>
+                </article>
+
+                <!-- Latest Guides Section -->
+                <div class="border-t border-slate-200 pt-12">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8">Latest Security Guides</h2>
+                    <div class="grid gap-8">
+                        
+                        <div class="group">
+                            <a href="blog-strong-password.html" class="block">
+                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">How to Create a Strong Password in 2026</h3>
+                                <p class="text-slate-600 mb-3">A comprehensive guide on creating memorable yet unbreakable passwords using the passphrase method.</p>
+                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <a href="blog-common-mistakes.html" class="block">
+                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">5 Common Password Mistakes That Lead to Hacks</h3>
+                                <p class="text-slate-600 mb-3">Are you using pet names? Sequential numbers? Learn what habits put your digital identity at risk.</p>
+                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                            </a>
+                        </div>
+
+                        <div class="group">
+                            <a href="blog-are-checkers-safe.html" class="block">
+                                <h3 class="text-xl font-bold text-blue-600 group-hover:underline mb-2">Are Online Password Checkers Safe?</h3>
+                                <p class="text-slate-600 mb-3">The truth about client-side vs. server-side checking and how to verify if a tool is stealing your data.</p>
+                                <span class="text-sm font-bold text-slate-400 uppercase">Read Guide &rarr;</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-200">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-slate-800">Is this tool safe to use?</h4>
+                            <p class="text-sm text-slate-600 mt-1">Yes. SecurePass Check uses JavaScript to process your input directly in your browser. No data is sent to the cloud.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">What makes a password strong?</h4>
+                            <p class="text-sm text-slate-600 mt-1">Length is the most critical factor. A 15-character password made of random lowercase letters is often stronger than an 8-character password with complex symbols.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800">Does this guarantee I won't be hacked?</h4>
+                            <p class="text-sm text-slate-600 mt-1">No tool can guarantee absolute safety. This tool estimates resistance to brute-force attacks, but it cannot protect against phishing or keyloggers.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <aside class="space-y-8">
+                <div class="bg-blue-600 rounded-2xl p-6 text-white shadow-lg">
+                    <h3 class="font-bold text-lg mb-2">Privacy First</h3>
+                    <p class="text-blue-100 text-sm mb-4">We believe in privacy by design. Inspect our source code or use this tool offline.</p>
+                    <a href="privacy-policy.html" class="inline-block bg-white text-blue-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-blue-50 transition-colors">Read Policy</a>
+                </div>
+
+                <div class="ad-container">
+                    <span class="ad-label">Sponsored</span>
+                    <div class="ad-placeholder h-64">Square Ad</div>
+                </div>
+
+                <div class="bg-white rounded-2xl border border-slate-200 p-6">
+                    <h3 class="font-bold text-slate-900 mb-4">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="terms.html" class="hover:text-blue-600">Terms & Conditions</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-blue-600">Disclaimer</a></li>
+                        <li><a href="contact.html" class="hover:text-blue-600">Contact Support</a></li>
                     </ul>
-                    <p class="mt-4 text-sm bg-blue-50 p-4 rounded-lg text-blue-800">
-                        <strong>Note:</strong> This is a theoretical estimate. Real-world cracking time can vary based on hacker hardware, dictionary attacks, and website security policies.
-                    </p>
                 </div>
-            </section>
+            </aside>
 
-            <section class="mb-12">
-                <h2 class="text-2xl font-bold mb-4">Who Should Use This Tool?</h2>
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4 font-bold">1</div>
-                        <h3 class="font-bold text-lg mb-2">Students</h3>
-                        <p class="text-sm">Learn the basics of cybersecurity and why "123456" is a bad idea for your school accounts.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 mb-4 font-bold">2</div>
-                        <h3 class="font-bold text-lg mb-2">Seniors</h3>
-                        <p class="text-sm">Check if your passwords are safe from online scams without navigating complex tech jargon.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4 font-bold">3</div>
-                        <h3 class="font-bold text-lg mb-2">Everyone</h3>
-                        <p class="text-sm">Quickly validate a new password before you set it for your email or banking app.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- FAQ for SEO -->
-            <section class="mb-8">
-                <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 text-lg mb-2">Is this password checker safe?</h3>
-                        <p class="text-slate-600">Yes. Unlike many online tools, SecurePass Check runs entirely in your web browser using JavaScript. We do not have a backend server, so your password is never transmitted over the internet.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 text-lg mb-2">Can I use this offline?</h3>
-                        <p class="text-slate-600">Yes! Once this page loads, you can disconnect your internet and the tool will still function perfectly. This is the ultimate proof of privacy.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 text-lg mb-2">Is the crack time accurate?</h3>
-                        <p class="text-slate-600">It is an estimation based on brute-force mathematics. Smart hackers also use "dictionary attacks" (guessing common words). If your password is "Password123", it might be cracked instantly even if the math says otherwise.</p>
-                    </div>
-                </div>
-            </section>
-        </article>
+        </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-auto py-10">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-8">
-                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                <span class="text-xs font-medium text-slate-500">SecurePass Check does not store data.</span>
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-auto">
+        <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-4 gap-8 mb-8">
+            <div class="col-span-2">
+                <span class="text-white font-bold text-xl block mb-4">SecurePass Check</span>
+                <p class="text-sm max-w-xs">Empowering users with simple, effective, and private cybersecurity tools. Built for students, seniors, and everyone in between.</p>
             </div>
-            
-            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-slate-600 mb-8">
-                <a href="about.html" class="hover:text-blue-600 transition-colors">About Us</a>
-                <a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
-                <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+            <div>
+                <h4 class="text-white font-bold mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+                    <li><a href="disclaimer.html" class="hover:text-white">Disclaimer</a></li>
+                </ul>
             </div>
-
-            <p class="text-slate-400 text-sm">
-                &copy; <span id="year"></span> SecurePass Check. All rights reserved.
-            </p>
+            <div>
+                <h4 class="text-white font-bold mb-4">Resources</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="blog-strong-password.html" class="hover:text-white">Password Guide</a></li>
+                    <li><a href="about.html" class="hover:text-white">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-xs border-t border-slate-800 pt-8">
+            &copy; <span id="year"></span> SecurePass Check. All rights reserved.
         </div>
     </footer>
 
-    <!-- Logic Script -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
+        // Logic from previous version preserved below
         const passwordInput = document.getElementById('passwordInput');
         const toggleBtn = document.getElementById('toggleBtn');
         const eyeIcon = document.getElementById('eyeIcon');
@@ -277,7 +236,6 @@
         const crackTimeText = document.getElementById('crackTime');
         const tipsArea = document.getElementById('tipsArea');
 
-        // Toggle Visibility
         toggleBtn.addEventListener('click', () => {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
@@ -285,37 +243,23 @@
             eyeOffIcon.classList.toggle('hidden');
         });
 
-        // Time Formatting
         function formatTime(seconds) {
             if (seconds < 1e-6) return "Instantly";
             if (seconds < 1) return "Less than a second";
             if (seconds < 60) return Math.round(seconds) + " seconds";
-            
-            const minutes = seconds / 60;
-            if (minutes < 60) return Math.round(minutes) + " minutes";
-            
-            const hours = minutes / 60;
-            if (hours < 24) return Math.round(hours) + " hours";
-            
-            const days = hours / 24;
-            if (days < 30) return Math.round(days) + " days";
-            
-            const months = days / 30;
-            if (months < 12) return Math.round(months) + " months";
-            
+            const minutes = seconds / 60; if (minutes < 60) return Math.round(minutes) + " minutes";
+            const hours = minutes / 60; if (hours < 24) return Math.round(hours) + " hours";
+            const days = hours / 24; if (days < 30) return Math.round(days) + " days";
+            const months = days / 30; if (months < 12) return Math.round(months) + " months";
             const years = days / 365;
             if (years < 1000) return Math.round(years) + " years";
-            if (years < 1000000) return Math.round(years / 1000) + " thousand years";
-            if (years < 1000000000) return Math.round(years / 1000000) + " million years";
-            
+            if (years < 1000000) return Math.round(years / 1000) + "k years";
+            if (years < 1000000000) return Math.round(years / 1000000) + "m years";
             return "Billions of years";
         }
 
-        // Analysis Logic
         function analyze() {
             const password = passwordInput.value;
-            
-            // UI Reset
             resultsArea.classList.remove('hidden');
             tipsArea.innerHTML = '';
             
@@ -327,31 +271,25 @@
                 return;
             }
 
-            // 1. Calculate Pool Size
             let pool = 0;
             if (/[a-z]/.test(password)) pool += 26;
             if (/[A-Z]/.test(password)) pool += 26;
             if (/[0-9]/.test(password)) pool += 10;
             if (/[^A-Za-z0-9]/.test(password)) pool += 33;
-            if (pool === 0) pool = 10; // Fallback
+            if (pool === 0) pool = 10;
 
-            // 2. Calculate Entropy / Combinations
             const combinations = Math.pow(pool, password.length);
-            const guessesPerSecond = 1000000000; // 1 Billion
+            const guessesPerSecond = 1000000000;
             const seconds = combinations / guessesPerSecond;
 
-            // 3. Score Calculation (Simple heuristic)
             let score = 0;
             if (password.length > 8) score += 20;
             if (password.length > 12) score += 20;
-            if (pool >= 52) score += 20; // Letters case mixed
-            if (pool >= 62) score += 20; // Alphanumeric
-            if (pool >= 70) score += 20; // Special chars
-
-            // Deductions
-            if (/(.)\1{2,}/.test(password)) score -= 20; // Repetition
+            if (pool >= 52) score += 20;
+            if (pool >= 62) score += 20;
+            if (pool >= 70) score += 20;
+            if (/(.)\1{2,}/.test(password)) score -= 20;
             
-            // Leveling
             let level = "Very Weak";
             let color = "bg-red-500";
             let width = "10%";
@@ -361,29 +299,27 @@
             else if (score >= 50) { level = "Medium"; color = "bg-yellow-400"; width = "50%"; }
             else if (score >= 30) { level = "Weak"; color = "bg-orange-500"; width = "25%"; }
 
-            // UI Update
             strengthText.textContent = level;
             strengthBar.className = `h-full meter-fill ${color}`;
             strengthBar.style.width = width;
             crackTimeText.textContent = formatTime(seconds);
 
-            // Tips Generation
             const tips = [];
             if (password.length < 12) tips.push("Add more characters (aim for 12+).");
-            if (!/[A-Z]/.test(password)) tips.push("Add an uppercase letter.");
-            if (!/[0-9]/.test(password)) tips.push("Add a number.");
-            if (!/[^A-Za-z0-9]/.test(password)) tips.push("Add a special symbol (e.g. ! @ #).");
+            if (!/[A-Z]/.test(password)) tips.push("Use uppercase letters.");
+            if (!/[0-9]/.test(password)) tips.push("Include numbers.");
+            if (!/[^A-Za-z0-9]/.test(password)) tips.push("Add special symbols.");
             
             if (tips.length === 0) {
                 const div = document.createElement('div');
-                div.className = "flex items-center gap-3 p-4 bg-green-50 text-green-700 rounded-lg text-sm font-medium animate-fadeIn";
-                div.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg> Great job! This password is strong.`;
+                div.className = "flex items-center gap-3 p-4 bg-green-50 text-green-700 rounded-lg text-sm font-medium";
+                div.innerHTML = `Great job! This password is robust.`;
                 tipsArea.appendChild(div);
             } else {
                 tips.forEach(tip => {
                     const div = document.createElement('div');
-                    div.className = "flex items-center gap-3 p-4 bg-orange-50 text-orange-800 rounded-lg text-sm animate-fadeIn";
-                    div.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> ${tip}`;
+                    div.className = "flex items-center gap-3 p-4 bg-orange-50 text-orange-800 rounded-lg text-sm";
+                    div.innerHTML = `${tip}`;
                     tipsArea.appendChild(div);
                 });
             }
@@ -393,7 +329,6 @@
         passwordInput.addEventListener('keyup', (e) => {
             if (e.key === 'Enter') analyze();
         });
-
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
     <nav class="bg-white border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
             <a href="index.html" class="text-sm text-blue-600 font-medium">Back to Tool</a>
         </div>
@@ -19,7 +19,7 @@
 
     <main class="max-w-xl mx-auto px-4 py-12 flex-grow w-full">
         <h1 class="text-3xl font-bold mb-2 text-slate-900 text-center">Contact Us</h1>
-        <p class="text-slate-500 text-center mb-8">Have feedback or suggestions? We'd love to hear from you.</p>
+        <p class="text-slate-500 text-center mb-8">Have feedback regarding our security tools? We'd love to hear from you.</p>
         
         <div class="text-center mb-8">
             <p class="text-sm text-slate-500 mb-1">Email us directly at:</p>
@@ -27,44 +27,27 @@
         </div>
 
         <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-lg shadow-slate-200/50">
-            
             <div class="bg-red-50 border border-red-100 rounded-lg p-4 mb-6 flex items-start gap-3">
                 <svg class="w-5 h-5 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                 <p class="text-sm text-red-700 font-medium">
-                    Warning: Do NOT send passwords or sensitive personal data through email or this form.
+                    Strict Policy: Do NOT send passwords, account credentials, or sensitive personal data through email.
                 </p>
             </div>
-
-            <form action="mailto:vg112204@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                    <input type="text" name="name" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="Your Name">
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                    <input type="email" name="email" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="john@example.com">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                    <textarea name="message" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" placeholder="How can we improve?"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors">
-                    Send Message
-                </button>
-            </form>
-
+            
+            <p class="text-sm text-slate-600 mb-4">
+                We are open to suggestions regarding:
+            </p>
+            <ul class="list-disc pl-5 text-sm text-slate-600 space-y-2 mb-6">
+                <li>Feature requests for the strength meter.</li>
+                <li>Bug reports or calculation discrepancies.</li>
+                <li>Partnership opportunities for educational institutions.</li>
+            </ul>
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-center mt-auto">
-        <p class="text-slate-400 text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
     </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

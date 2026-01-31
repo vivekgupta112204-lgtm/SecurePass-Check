@@ -5,60 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | SecurePass Check</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>body { font-family: 'Inter', sans-serif; }</style>
 </head>
 <body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
 
     <nav class="bg-white border-b border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
             <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
             <div class="flex gap-4 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-blue-600">Home</a>
-                <a href="contact.html" class="text-slate-600 hover:text-blue-600">Contact</a>
+                <a href="index.html" class="text-blue-600 hover:text-blue-700">Tool</a>
+                <a href="blog-strong-password.html" class="text-slate-600 hover:text-blue-600">Blog</a>
             </div>
         </div>
     </nav>
 
     <main class="max-w-3xl mx-auto px-4 py-12 flex-grow">
-        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">About SecurePass Check</h1>
+        <h1 class="text-4xl font-extrabold mb-8 text-slate-900">About SecurePass Check</h1>
         
-        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm mb-8">
-            <h2 class="text-xl font-bold mb-4">Our Mission</h2>
-            <p class="text-slate-600 leading-relaxed mb-4">
-                SecurePass Check was built with a simple goal: <strong>To make the internet safer for everyone, specifically students and non-technical users.</strong>
+        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm mb-12 prose prose-slate">
+            <h2 class="text-2xl font-bold mb-4">Our Mission</h2>
+            <p>
+                In an era where digital identity is as important as physical identity, <strong>SecurePass Check</strong> was founded with a singular mission: to democratize cybersecurity education. We believe that everyone—from high school students to retirees—deserves to understand the mechanics of digital safety without needing a degree in computer science.
             </p>
-            <p class="text-slate-600 leading-relaxed">
-                We noticed that many password tools are too technical, cluttered with ads, or simply untrustworthy. We wanted to create a tool that is clean, educational, and strictly privacy-first.
+            <p>
+                The internet is fraught with data breaches, phishing attempts, and automated hacking tools. Our goal is to provide a "sandbox" environment where users can test, experiment, and learn about password hygiene without putting their actual data at risk.
+            </p>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Why We Built This</h2>
+            <p>
+                Most password strength checkers are either overly technical command-line tools or opaque web forms that send your data to a remote server. This creates a paradox: to test your security, you have to compromise it.
+            </p>
+            <p>
+                SecurePass Check solves this by running <strong>100% Client-Side</strong>. We utilize modern JavaScript to perform all entropy calculations directly within your browser. This means:
+            </p>
+            <ul>
+                <li>No data transmission to servers.</li>
+                <li>No database logging of input.</li>
+                <li>Instant feedback with zero latency.</li>
+            </ul>
+
+            <h2 class="text-2xl font-bold mt-8 mb-4">Our Methodology</h2>
+            <p>
+                We do not rely on a static list of "bad passwords" alone. Instead, we use a mathematical approach based on <strong>Information Entropy</strong>. We calculate the size of the character pool (lowercase, uppercase, numbers, symbols) and raise it to the power of the password length. We then compare this against current hardware benchmarks (approximated at 1 billion guesses per second) to provide a realistic "Time to Crack" estimate.
             </p>
         </div>
-
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-blue-600">Educational Purpose</h3>
-                <p class="text-sm text-slate-600">
-                    This tool is designed for educational purposes. It helps users understand the mathematical relationship between password complexity and security.
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                <h3 class="font-bold text-lg mb-2 text-blue-600">Methodology</h3>
-                <p class="text-sm text-slate-600">
-                    We use standard brute-force calculation metrics assuming an attack speed of 1 billion guesses per second. This is a standard benchmark in the cybersecurity industry.
-                </p>
-            </div>
-        </div>
-
-        <p class="text-center text-sm text-slate-500">
-            SecurePass Check is a free utility provided to the community.
-        </p>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-center mt-auto">
-        <p class="text-slate-400 text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    <footer class="bg-slate-900 text-slate-400 py-8 text-center mt-auto">
+        <p class="text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
     </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
