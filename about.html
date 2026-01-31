@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | SecurePass Check</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <nav class="bg-white border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-xl text-slate-900">SecurePass Check</a>
+            <div class="flex gap-4 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-blue-600">Home</a>
+                <a href="contact.html" class="text-slate-600 hover:text-blue-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-4 py-12 flex-grow">
+        <h1 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900">About SecurePass Check</h1>
+        
+        <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm mb-8">
+            <h2 class="text-xl font-bold mb-4">Our Mission</h2>
+            <p class="text-slate-600 leading-relaxed mb-4">
+                SecurePass Check was built with a simple goal: <strong>To make the internet safer for everyone, specifically students and non-technical users.</strong>
+            </p>
+            <p class="text-slate-600 leading-relaxed">
+                We noticed that many password tools are too technical, cluttered with ads, or simply untrustworthy. We wanted to create a tool that is clean, educational, and strictly privacy-first.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-blue-600">Educational Purpose</h3>
+                <p class="text-sm text-slate-600">
+                    This tool is designed for educational purposes. It helps users understand the mathematical relationship between password complexity and security.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                <h3 class="font-bold text-lg mb-2 text-blue-600">Methodology</h3>
+                <p class="text-sm text-slate-600">
+                    We use standard brute-force calculation metrics assuming an attack speed of 1 billion guesses per second. This is a standard benchmark in the cybersecurity industry.
+                </p>
+            </div>
+        </div>
+
+        <p class="text-center text-sm text-slate-500">
+            SecurePass Check is a free utility provided to the community.
+        </p>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-8 text-center mt-auto">
+        <p class="text-slate-400 text-sm">&copy; <span id="year"></span> SecurePass Check.</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

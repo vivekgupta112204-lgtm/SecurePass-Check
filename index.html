@@ -3,240 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Strength Checker | Time to Crack Password</title>
-    <meta name="description" content="Check password strength and estimate how long it would take to crack. Free, fast, and 100% private password safety checker.">
-    <meta name="keywords" content="password strength checker, time to crack password, password safety checker, strong password test, password crack time calculator, cyber security for students, free password checker online">
+    <title>Password Strength Checker | Time to Crack Password Calculator</title>
+    <meta name="description" content="Check how strong your password is and estimate the time to crack it. A free, privacy-first password safety tool that runs 100% in your browser.">
+    <meta name="keywords" content="password strength checker, time to crack password, password safety checker, how strong is my password, brute force calculator, cybersecurity tool">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .meter-bar { transition: width 0.5s ease-in-out, background-color 0.5s ease-in-out; }
-        .fade-in { animation: fadeIn 0.5s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* AdSense placeholder styling - Neutral and Safe */
-        .ad-slot-container {
+        /* Smooth transitions for the meter */
+        .meter-fill { transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.5s ease; }
+        
+        /* AdSense Safe Zone Containers */
+        .ad-container {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             margin: 2rem 0;
-            padding: 0.5rem;
-            background-color: #f8fafc;
+            padding: 1rem;
+            background-color: #f8fafc; /* slate-50 */
+            border: 1px dashed #cbd5e1; /* slate-300 */
             border-radius: 0.5rem;
         }
+        
         .ad-label {
             font-size: 0.65rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #94a3b8; /* slate-400 */
+            color: #64748b;
             margin-bottom: 0.5rem;
         }
-        .privacy-note {
-            font-size: 0.875rem;
-            color: #475569; /* slate-600 */
+        
+        .ad-placeholder {
+            width: 100%;
+            height: 90px;
+            background-color: #fff;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 0.875rem;
+            border-radius: 0.25rem;
         }
-    </style>
-<script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "recharts": "https://esm.sh/recharts@^3.7.0"
-  }
-}
-</script>
-</head>
-<body class="bg-slate-50 text-slate-800">
 
-    <!-- Navbar (Logo only - Not H1) -->
+        /* Utility */
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
     <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-4xl mx-auto px-4 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2 font-bold text-xl text-slate-900">
-                <div class="bg-blue-600 p-1.5 rounded-lg">
+            <a href="index.html" class="flex items-center gap-2 font-bold text-xl text-slate-900 group">
+                <div class="bg-blue-600 p-1.5 rounded-lg group-hover:bg-blue-700 transition-colors">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                 </div>
                 <span>SecurePass Check</span>
-            </div>
-            <div class="hidden sm:flex gap-6 text-sm font-medium text-slate-500">
-                <a href="#about" class="hover:text-blue-600">About</a>
-                <a href="#faq" class="hover:text-blue-600">FAQ</a>
+            </a>
+            <div class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+                <a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy</a>
+                <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto px-4 py-8">
+    <div class="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
         
-        <!-- HEADER (H1) -->
+        <!-- H1 Header -->
         <header class="text-center mb-8">
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight">Password Strength & <br class="md:hidden">Time to Crack Checker</h1>
-            <p class="text-lg text-slate-600">Check how strong your password is — and how long it would take to crack.</p>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">Password Strength & <br class="md:hidden">Time to Crack Checker</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">Check how strong your password is — and how long it would take a hacker to crack it using brute force.</p>
         </header>
 
-        <!-- ✅ Ad Slot #1: Top Banner (SAFE) -->
-        <div class="ad-slot-container">
+        <!-- ✅ AD SLOT 1: Top Banner -->
+        <div class="ad-container">
             <span class="ad-label">Sponsored</span>
-            <div class="w-full h-24 bg-white border border-slate-200 border-dashed rounded flex items-center justify-center text-slate-400 text-sm">
-                <!-- Insert Google AdSense Unit Here -->
-                AdSpace (Top Banner)
+            <div class="ad-placeholder">
+                <!-- Replace with Google AdSense Code -->
+                Google AdSense - Top Banner
             </div>
         </div>
 
-        <main>
-            <!-- 🔐 PASSWORD TOOL SECTION (NO ADS HERE) -->
-            <section id="password-tool" class="bg-white rounded-2xl shadow-lg border border-slate-100 p-6 md:p-8 mb-8">
-                <h2 class="text-xl font-bold text-slate-800 mb-6 border-b border-slate-100 pb-4">Check Your Password</h2>
-                
-                <label for="passwordInput" class="block text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wider">Enter Password</label>
-                
-                <div class="relative mb-6">
-                    <input type="password" id="passwordInput" class="w-full pl-4 pr-12 py-4 text-xl font-medium text-slate-800 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all" placeholder="Type a password..." autocomplete="off">
-                    <button id="toggleBtn" class="absolute inset-y-0 right-0 px-4 text-slate-400 hover:text-slate-600" aria-label="Toggle Password Visibility">
+        <!-- 🔐 PASSWORD TOOL (No Ads Here) -->
+        <section class="bg-white rounded-2xl shadow-xl shadow-slate-200/60 border border-slate-100 p-6 md:p-10 mb-10">
+            
+            <!-- Input Area -->
+            <div class="mb-8">
+                <label for="passwordInput" class="block text-sm font-bold text-slate-500 mb-2 uppercase tracking-wider">Enter Password to Check</label>
+                <div class="relative group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="w-6 h-6 text-slate-400 group-focus-within:text-blue-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                    </div>
+                    <input type="password" id="passwordInput" class="w-full pl-12 pr-14 py-4 text-xl md:text-2xl font-medium text-slate-800 bg-white border-2 border-slate-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all placeholder:text-slate-300" placeholder="Type here..." autocomplete="off" spellcheck="false">
+                    <button id="toggleBtn" class="absolute inset-y-0 right-0 px-4 text-slate-400 hover:text-slate-600 transition-colors" aria-label="Toggle Password Visibility">
+                        <!-- Eye Icon -->
                         <svg id="eyeIcon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        <!-- Eye Off Icon -->
                         <svg id="eyeOffIcon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path></svg>
                     </button>
                 </div>
+            </div>
 
-                <button id="checkBtn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-colors mb-6 shadow-md shadow-blue-200">
-                    Check Password
-                </button>
+            <button id="checkBtn" class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-bold py-4 px-6 rounded-xl transition-colors mb-8 text-lg shadow-lg shadow-blue-200">
+                Check Password
+            </button>
 
-                <!-- Results Area -->
-                <div id="resultsArea" class="hidden fade-in">
-                    <!-- Strength Meter -->
-                    <div class="mb-6">
-                        <div class="flex justify-between items-end mb-2">
-                            <span class="text-sm font-medium text-slate-500">Strength</span>
-                            <span id="strengthText" class="text-lg font-bold">Very Weak</span>
-                        </div>
-                        <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden">
-                            <div id="strengthBar" class="h-full bg-red-500 w-0 meter-bar"></div>
-                        </div>
+            <!-- Results Section -->
+            <div id="results" class="hidden">
+                <!-- Strength Meter -->
+                <div class="mb-8">
+                    <div class="flex justify-between items-end mb-3">
+                        <span class="text-sm font-bold text-slate-500 uppercase tracking-wider">Strength</span>
+                        <span id="strengthText" class="text-2xl font-bold text-slate-800">Very Weak</span>
                     </div>
-
-                    <!-- Time to Crack -->
-                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 mb-6 flex items-start gap-4">
-                        <div class="bg-white p-2 rounded-lg shadow-sm text-blue-600">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <div>
-                            <h4 class="text-xs uppercase tracking-wide text-slate-500 font-semibold mb-1">Time to Crack</h4>
-                            <p id="crackTimeText" class="text-2xl font-bold text-slate-800">0 seconds</p>
-                            <p class="text-xs text-slate-400 mt-1">Estimated using brute-force (1 billion guesses/sec)</p>
-                        </div>
+                    <div class="w-full bg-slate-100 rounded-full h-4 overflow-hidden">
+                        <div id="strengthBar" class="h-full bg-red-500 w-0 meter-fill"></div>
                     </div>
-
-                    <!-- Tips -->
-                    <div id="tipsContainer" class="space-y-3 mb-6"></div>
                 </div>
 
-                <!-- Trust Signal (Critical for Compliance) -->
-                <div class="mt-6 pt-6 border-t border-slate-100 flex justify-center">
-                    <p class="privacy-note bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-                        <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                        <span>🔒 <strong>100% Privacy:</strong> Your password never leaves your device. Checks run locally.</span>
+                <!-- Time to Crack -->
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 mb-8 flex flex-col md:flex-row items-center md:items-start gap-5 text-center md:text-left">
+                    <div class="p-3 bg-white rounded-xl shadow-sm text-blue-600 shrink-0">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Estimated Time to Crack</h4>
+                        <p id="crackTime" class="text-3xl md:text-4xl font-extrabold text-slate-800 leading-tight">0 seconds</p>
+                        <p class="text-xs text-slate-500 mt-2">Based on a brute-force attack rate of 1 billion guesses/second.</p>
+                    </div>
+                </div>
+
+                <!-- Tips -->
+                <div id="tipsArea" class="space-y-3">
+                    <!-- Dynamic tips will appear here -->
+                </div>
+            </div>
+
+            <!-- Privacy Notice (Trust Signal) -->
+            <div class="mt-8 pt-6 border-t border-slate-100 flex justify-center">
+                <p class="privacy-note text-sm text-slate-500 flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                    <svg class="w-4 h-4 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    Your password never leaves your device. All checks are local.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- ✅ AD SLOT 2: After Tool -->
+        <div class="ad-container">
+            <span class="ad-label">Sponsored</span>
+            <div class="ad-placeholder h-32">
+                <!-- Replace with Google AdSense Code -->
+                Google AdSense - Responsive Display
+            </div>
+        </div>
+
+        <!-- SEO Content Sections -->
+        <article class="prose prose-slate max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600">
+            
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Why Password Security Matters</h2>
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <p class="mb-4">
+                        In today's digital age, your password is the key to your digital identity. Weak passwords are the number one cause of data breaches. If a hacker cracks your password, they can gain access to your emails, bank accounts, social media profiles, and personal photos.
+                    </p>
+                    <p>
+                        <strong>SecurePass Check</strong> helps you visualize how vulnerable a weak password is. By understanding the "Time to Crack," you can make informed decisions to create stronger, more complex passwords that keep your data safe.
                     </p>
                 </div>
             </section>
 
-            <!-- ✅ Ad Slot #2: After Tool (SAFE & HIGH CTR) -->
-            <div class="ad-slot-container">
-                <span class="ad-label">Sponsored</span>
-                <div class="w-full h-32 bg-white border border-slate-200 border-dashed rounded flex items-center justify-center text-slate-400 text-sm">
-                    <!-- Insert Google AdSense Unit Here -->
-                    AdSpace (Responsive Display)
-                </div>
-            </div>
-
-            <!-- Content Section: Why -->
-            <section class="mt-12" id="about">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">Why Password Security Matters</h2>
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">What Is “Time to Crack”?</h2>
                 <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="text-slate-600 leading-relaxed mb-4">
-                        Weak passwords are the leading cause of hacked accounts. A strong, unique password protects your email, social media, banking apps, and personal data from cyber criminals.
+                    <p class="mb-4">
+                        "Time to crack" is a mathematical estimate of how long a computer would take to guess your password by trying every possible combination of characters. This is known as a <em>brute-force attack</em>.
                     </p>
-                    <p class="text-slate-600 leading-relaxed">
-                        Using a mix of uppercase letters, lowercase letters, numbers, and symbols significantly increases the time required for automated systems to crack your password.
-                    </p>
-                </div>
-            </section>
-
-            <!-- ✅ Ad Slot #3: In-Content (Density) -->
-            <div class="ad-slot-container">
-                <span class="ad-label">Sponsored</span>
-                <div class="w-full h-24 bg-white border border-slate-200 border-dashed rounded flex items-center justify-center text-slate-400 text-sm">
-                    <!-- Insert Google AdSense In-Article Unit Here -->
-                    AdSpace (In-Article)
-                </div>
-            </div>
-
-            <!-- Content Section: What Is Time to Crack -->
-            <section class="mt-8">
-                <h2 class="text-2xl font-bold text-slate-900 mb-4">What Is “Time to Crack”?</h2>
-                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
-                    <p class="text-slate-600 leading-relaxed">
-                        "Time to crack" is an estimate of how long a computer would take to guess your password by trying every possible combination (brute-force attack). 
-                        Our tool assumes a modern attack speed of <strong>1 billion guesses per second</strong>.
-                    </p>
-                    <ul class="mt-4 space-y-2 text-sm text-slate-600">
-                        <li class="flex items-center gap-2">❌ <strong>Short & Simple:</strong> Cracked instantly.</li>
-                        <li class="flex items-center gap-2">✅ <strong>Long & Complex:</strong> Can take billions of years.</li>
+                    <h3 class="text-lg font-bold mt-6 mb-2">How we calculate it:</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Character Set:</strong> We check if you use lowercase letters, uppercase letters, numbers, and symbols.</li>
+                        <li><strong>Combinations:</strong> The math is simple: <code>Pool Size ^ Password Length</code>.</li>
+                        <li><strong>Attack Speed:</strong> We assume a modern powerful computer can try <strong>1,000,000,000 (1 billion)</strong> passwords per second.</li>
                     </ul>
+                    <p class="mt-4 text-sm bg-blue-50 p-4 rounded-lg text-blue-800">
+                        <strong>Note:</strong> This is a theoretical estimate. Real-world cracking time can vary based on hacker hardware, dictionary attacks, and website security policies.
+                    </p>
                 </div>
             </section>
 
-            <!-- Content Section: FAQ -->
-            <section class="mt-12 mb-12" id="faq">
-                <h2 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 mb-2 text-lg">Is this password checker safe?</h3>
-                        <p class="text-slate-600">Yes. Everything runs locally in your browser using JavaScript. Nothing is ever stored or sent to a server.</p>
+            <section class="mb-12">
+                <h2 class="text-2xl font-bold mb-4">Who Should Use This Tool?</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-4 font-bold">1</div>
+                        <h3 class="font-bold text-lg mb-2">Students</h3>
+                        <p class="text-sm">Learn the basics of cybersecurity and why "123456" is a bad idea for your school accounts.</p>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 mb-2 text-lg">Is the crack time accurate?</h3>
-                        <p class="text-slate-600">It is a mathematical estimate based on character math and common attack hardware speeds. Real-world security depends on many factors.</p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center text-pink-600 mb-4 font-bold">2</div>
+                        <h3 class="font-bold text-lg mb-2">Seniors</h3>
+                        <p class="text-sm">Check if your passwords are safe from online scams without navigating complex tech jargon.</p>
                     </div>
-                    <div class="bg-white p-5 rounded-xl border border-slate-100 shadow-sm">
-                        <h3 class="font-bold text-slate-800 mb-2 text-lg">Is this tool free?</h3>
-                        <p class="text-slate-600">Yes, this tool is completely free to use.</p>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <div class="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center text-teal-600 mb-4 font-bold">3</div>
+                        <h3 class="font-bold text-lg mb-2">Everyone</h3>
+                        <p class="text-sm">Quickly validate a new password before you set it for your email or banking app.</p>
                     </div>
                 </div>
             </section>
-        </main>
+
+            <!-- FAQ for SEO -->
+            <section class="mb-8">
+                <h2 class="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Is this password checker safe?</h3>
+                        <p class="text-slate-600">Yes. Unlike many online tools, SecurePass Check runs entirely in your web browser using JavaScript. We do not have a backend server, so your password is never transmitted over the internet.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Can I use this offline?</h3>
+                        <p class="text-slate-600">Yes! Once this page loads, you can disconnect your internet and the tool will still function perfectly. This is the ultimate proof of privacy.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl border border-slate-100 shadow-sm">
+                        <h3 class="font-bold text-slate-800 text-lg mb-2">Is the crack time accurate?</h3>
+                        <p class="text-slate-600">It is an estimation based on brute-force mathematics. Smart hackers also use "dictionary attacks" (guessing common words). If your password is "Password123", it might be cracked instantly even if the math says otherwise.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 mt-12 py-10 text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="inline-block bg-slate-50 px-4 py-2 rounded-full mb-6">
-                <p class="text-slate-500 text-xs font-medium">
-                    🔒 We never store or send your password. Ads are shown only to support this free tool.
-                </p>
+    <footer class="bg-white border-t border-slate-200 mt-auto py-10">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="inline-flex items-center gap-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-8">
+                <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                <span class="text-xs font-medium text-slate-500">SecurePass Check does not store data.</span>
             </div>
             
-            <div class="flex justify-center gap-6 text-sm text-slate-500 mb-6">
-                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
-                <a href="#" class="hover:text-blue-600">Terms of Service</a>
-                <a href="#" class="hover:text-blue-600">Contact Us</a>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium text-slate-600 mb-8">
+                <a href="about.html" class="hover:text-blue-600 transition-colors">About Us</a>
+                <a href="privacy-policy.html" class="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
             </div>
 
             <p class="text-slate-400 text-sm">
-                &copy; <span id="year"></span> SecurePass Check. Built for privacy.
+                &copy; <span id="year"></span> SecurePass Check. All rights reserved.
             </p>
         </div>
     </footer>
 
-    <!-- Logic -->
+    <!-- Logic Script -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -245,11 +271,11 @@
         const eyeIcon = document.getElementById('eyeIcon');
         const eyeOffIcon = document.getElementById('eyeOffIcon');
         const checkBtn = document.getElementById('checkBtn');
-        const resultsArea = document.getElementById('resultsArea');
+        const resultsArea = document.getElementById('results');
         const strengthBar = document.getElementById('strengthBar');
         const strengthText = document.getElementById('strengthText');
-        const crackTimeText = document.getElementById('crackTimeText');
-        const tipsContainer = document.getElementById('tipsContainer');
+        const crackTimeText = document.getElementById('crackTime');
+        const tipsArea = document.getElementById('tipsArea');
 
         // Toggle Visibility
         toggleBtn.addEventListener('click', () => {
@@ -259,140 +285,113 @@
             eyeOffIcon.classList.toggle('hidden');
         });
 
-        // Calculate Logic
-        function calculateStrength(password) {
-            let score = 0;
-            const tips = [];
-
-            if (!password) return { score: 0, level: 'Very Weak', tips: [], crackTime: '0 seconds' };
-
-            // Length
-            if (password.length >= 8) score += 20;
-            if (password.length >= 12) score += 20;
-            if (password.length >= 16) score += 10;
-            if (password.length < 8) tips.push("Use at least 8 characters (12+ is better).");
-
-            // Diversity
-            const hasLower = /[a-z]/.test(password);
-            const hasUpper = /[A-Z]/.test(password);
-            const hasNumber = /[0-9]/.test(password);
-            const hasSpecial = /[^A-Za-z0-9]/.test(password);
-
-            let diversity = 0;
-            if (hasLower) diversity++;
-            if (hasUpper) diversity++;
-            if (hasNumber) diversity++;
-            if (hasSpecial) diversity++;
-
-            score += diversity * 10;
-
-            if (!hasUpper) tips.push("Add an uppercase letter.");
-            if (!hasLower) tips.push("Add a lowercase letter.");
-            if (!hasNumber) tips.push("Add a number.");
-            if (!hasSpecial) tips.push("Add a symbol (e.g., ! @ # $).");
-
-            // Complexity deduction
-            if (/(.)\1{2,}/.test(password)) {
-                score -= 10;
-                tips.push("Avoid repeating characters like 'aaa'.");
-            }
-
-            // Cap Score
-            score = Math.min(100, Math.max(0, score));
-
-            // Level
-            let level = 'Very Weak';
-            let color = 'bg-red-500';
-            if (score >= 25) { level = 'Weak'; color = 'bg-orange-500'; }
-            if (score >= 50) { level = 'Medium'; color = 'bg-yellow-500'; }
-            if (score >= 75) { level = 'Strong'; color = 'bg-lime-500'; }
-            if (score >= 90) { level = 'Very Strong'; color = 'bg-green-500'; }
-
-            // Crack Time
-            let pool = 0;
-            if (hasLower) pool += 26;
-            if (hasUpper) pool += 26;
-            if (hasNumber) pool += 10;
-            if (hasSpecial) pool += 33;
-            if (pool === 0) pool = 1; // prevent 0
-
-            const combinations = Math.pow(pool, password.length);
-            const guessesPerSecond = 1_000_000_000; // 1 Billion
-            const seconds = combinations / guessesPerSecond;
-            
-            return { score, level, color, tips, crackTimeSeconds: seconds };
-        }
-
+        // Time Formatting
         function formatTime(seconds) {
-            if (seconds < 1) return "Instantly";
-            if (seconds < 60) return "A few seconds";
+            if (seconds < 1e-6) return "Instantly";
+            if (seconds < 1) return "Less than a second";
+            if (seconds < 60) return Math.round(seconds) + " seconds";
+            
             const minutes = seconds / 60;
             if (minutes < 60) return Math.round(minutes) + " minutes";
+            
             const hours = minutes / 60;
             if (hours < 24) return Math.round(hours) + " hours";
+            
             const days = hours / 24;
             if (days < 30) return Math.round(days) + " days";
+            
             const months = days / 30;
             if (months < 12) return Math.round(months) + " months";
+            
             const years = days / 365;
             if (years < 1000) return Math.round(years) + " years";
             if (years < 1000000) return Math.round(years / 1000) + " thousand years";
             if (years < 1000000000) return Math.round(years / 1000000) + " million years";
+            
             return "Billions of years";
         }
 
-        // Logic to run analysis
-        function runAnalysis() {
+        // Analysis Logic
+        function analyze() {
             const password = passwordInput.value;
-            const result = calculateStrength(password);
             
-            // Show results
+            // UI Reset
             resultsArea.classList.remove('hidden');
+            tipsArea.innerHTML = '';
             
-            // Update UI
-            strengthText.textContent = result.level;
-            strengthText.className = "text-lg font-bold"; // reset
+            if (!password) {
+                strengthText.textContent = "Very Weak";
+                strengthBar.style.width = "5%";
+                strengthBar.className = "h-full meter-fill bg-red-500";
+                crackTimeText.textContent = "0 seconds";
+                return;
+            }
+
+            // 1. Calculate Pool Size
+            let pool = 0;
+            if (/[a-z]/.test(password)) pool += 26;
+            if (/[A-Z]/.test(password)) pool += 26;
+            if (/[0-9]/.test(password)) pool += 10;
+            if (/[^A-Za-z0-9]/.test(password)) pool += 33;
+            if (pool === 0) pool = 10; // Fallback
+
+            // 2. Calculate Entropy / Combinations
+            const combinations = Math.pow(pool, password.length);
+            const guessesPerSecond = 1000000000; // 1 Billion
+            const seconds = combinations / guessesPerSecond;
+
+            // 3. Score Calculation (Simple heuristic)
+            let score = 0;
+            if (password.length > 8) score += 20;
+            if (password.length > 12) score += 20;
+            if (pool >= 52) score += 20; // Letters case mixed
+            if (pool >= 62) score += 20; // Alphanumeric
+            if (pool >= 70) score += 20; // Special chars
+
+            // Deductions
+            if (/(.)\1{2,}/.test(password)) score -= 20; // Repetition
             
-            // Colors
-            let colorClass = "text-red-500";
-            if (result.level === 'Weak') colorClass = "text-orange-500";
-            if (result.level === 'Medium') colorClass = "text-yellow-500";
-            if (result.level === 'Strong') colorClass = "text-lime-600";
-            if (result.level === 'Very Strong') colorClass = "text-green-600";
-            strengthText.classList.add(colorClass);
+            // Leveling
+            let level = "Very Weak";
+            let color = "bg-red-500";
+            let width = "10%";
 
-            strengthBar.className = `h-full meter-bar ${result.color}`;
-            strengthBar.style.width = `${result.score}%`;
+            if (score >= 90) { level = "Very Strong"; color = "bg-green-600"; width = "100%"; }
+            else if (score >= 70) { level = "Strong"; color = "bg-lime-500"; width = "75%"; }
+            else if (score >= 50) { level = "Medium"; color = "bg-yellow-400"; width = "50%"; }
+            else if (score >= 30) { level = "Weak"; color = "bg-orange-500"; width = "25%"; }
 
-            crackTimeText.textContent = formatTime(result.crackTimeSeconds);
+            // UI Update
+            strengthText.textContent = level;
+            strengthBar.className = `h-full meter-fill ${color}`;
+            strengthBar.style.width = width;
+            crackTimeText.textContent = formatTime(seconds);
 
-            // Tips
-            tipsContainer.innerHTML = '';
-            if (result.tips.length === 0 && password.length > 0) {
-                 const div = document.createElement('div');
-                 div.className = "flex items-center gap-2 p-3 bg-green-50 text-green-700 rounded-lg text-sm font-medium";
-                 div.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg> Good job! This password is strong.`;
-                 tipsContainer.appendChild(div);
+            // Tips Generation
+            const tips = [];
+            if (password.length < 12) tips.push("Add more characters (aim for 12+).");
+            if (!/[A-Z]/.test(password)) tips.push("Add an uppercase letter.");
+            if (!/[0-9]/.test(password)) tips.push("Add a number.");
+            if (!/[^A-Za-z0-9]/.test(password)) tips.push("Add a special symbol (e.g. ! @ #).");
+            
+            if (tips.length === 0) {
+                const div = document.createElement('div');
+                div.className = "flex items-center gap-3 p-4 bg-green-50 text-green-700 rounded-lg text-sm font-medium animate-fadeIn";
+                div.innerHTML = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg> Great job! This password is strong.`;
+                tipsArea.appendChild(div);
             } else {
-                result.tips.forEach(tip => {
+                tips.forEach(tip => {
                     const div = document.createElement('div');
-                    div.className = "flex items-center gap-2 p-3 bg-yellow-50 text-yellow-800 rounded-lg text-sm";
-                    div.innerHTML = `<svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> ${tip}`;
-                    tipsContainer.appendChild(div);
+                    div.className = "flex items-center gap-3 p-4 bg-orange-50 text-orange-800 rounded-lg text-sm animate-fadeIn";
+                    div.innerHTML = `<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg> ${tip}`;
+                    tipsArea.appendChild(div);
                 });
             }
         }
 
-        // Listeners
-        checkBtn.addEventListener('click', runAnalysis);
-        
-        // Also run on enter or real-time if preferred
+        checkBtn.addEventListener('click', analyze);
         passwordInput.addEventListener('keyup', (e) => {
-             // Real-time update logic can be enabled here if desired, 
-             // but keeping to request "Check Password" button primary interaction
-             // but adding real-time for better UX since it's standard.
-             if(passwordInput.value.length > 0) runAnalysis();
-             else resultsArea.classList.add('hidden');
+            if (e.key === 'Enter') analyze();
         });
 
     </script>
