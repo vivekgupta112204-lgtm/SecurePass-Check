@@ -573,27 +573,30 @@
             const adInsElements = document.querySelectorAll('.ad-placeholder ins');
             
             const observer = new ResizeObserver((entries) => {
-                // Using setTimeout ensures the callback runs in the next macrotask, 
-                // completely avoiding the "loop completed with undelivered notifications" error.
-                setTimeout(() => {
+                // Wrap in requestAnimationFrame to prevent "ResizeObserver loop completed with undelivered notifications"
+                window.requestAnimationFrame(() => {
                     if (!Array.isArray(entries) || !entries.length) return;
 
                     entries.forEach(entry => {
                         const target = entry.target;
                         // Only push if width is positive and we haven't requested yet
                         if (entry.contentRect.width > 0 && !target.getAttribute('data-ad-status')) {
+                            
+                            // Mark as requested immediately to prevent double processing
+                            target.setAttribute('data-ad-status', 'requested');
+
+                            // Stop observing immediately to prevent further notifications for this element
+                            observer.unobserve(target);
+
                             try {
-                                target.setAttribute('data-ad-status', 'requested');
                                 (window.adsbygoogle = window.adsbygoogle || []).push({});
-                                // Stop observing this element once requested
-                                observer.unobserve(target);
                             } catch (e) {
                                 console.error("AdSense Push Error: ", e);
-                                target.removeAttribute('data-ad-status'); // Retry on next resize if error
+                                // Optional: Reset status if push completely fails, though unlikely to help if it's script error
                             }
                         }
                     });
-                }, 0);
+                });
             });
 
             adInsElements.forEach(ins => observer.observe(ins));
